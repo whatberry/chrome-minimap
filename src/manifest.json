@@ -1,0 +1,28 @@
+{
+  "name": "web minimap",
+  "description": "一个给长网页生成minimap的工具。",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "icons": {
+    "48": "icons/icon_48.png",
+    "128": "icons/icon_128.png"
+  },
+  "browser_action": {
+    "default_title": "chrome-minimap",
+    "default_popup": "popup/popup.html"
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "content_scripts": [{
+    "matches": ["*://*.douban.com/note/*"],
+    "css": ["content/content.css"],
+    "js": ["content/content.js"]
+  }],
+  "options_ui": {
+    "page": "options/options.html",
+    "chrome_style": true
+  }
+}
